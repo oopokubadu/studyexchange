@@ -1087,6 +1087,101 @@ footer {
   box-shadow: 0px 18px 24px 0px rgba(0, 0, 0, 0.16);
 }
 
+.contacts-touch select {
+  background-color: #fff !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 18px 24px 0px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* Nationality autocomplete styling */
+.autocomplete-suggestions {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 18px 24px 0px rgba(0, 0, 0, 0.16);
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+  width: calc(100% - 24px);
+  display: none;
+}
+
+.autocomplete-suggestion {
+  padding: 10px 18px;
+  cursor: pointer;
+  color: #5f6168;
+  transition: all 0.3s;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.autocomplete-suggestion:hover, 
+.autocomplete-suggestion.selected {
+  background-color: #f5f5f5;
+  color: rgb(5, 34, 88);
+}
+
+/* Additional styles for nice-select plugin to maintain consistency */
+.contacts-touch .nice-select {
+  background-color: #fff !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 18px 24px 0px rgba(0, 0, 0, 0.16) !important;
+  height: auto;
+  line-height: 26px;
+  padding: 14px 18px;
+  width: 100%;
+}
+
+.contacts-touch .nice-select:after {
+  right: 18px;
+  top: 50%;
+}
+
+.contacts-touch .nice-select .current {
+  color: #5f6168;
+}
+
+.contacts-touch .nice-select .list {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 18px 24px 0px rgba(0, 0, 0, 0.16);
+  margin-top: 5px;
+  width: 100%;
+}
+
+.contacts-touch select {
+  background-color: #fff !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 18px 24px 0px rgba(0, 0, 0, 0.16) !important;
+}
+
+/* Additional styles for nice-select plugin to maintain consistency */
+.contacts-touch .nice-select {
+  background-color: #fff !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 18px 24px 0px rgba(0, 0, 0, 0.16) !important;
+  height: auto;
+  line-height: 26px;
+  padding: 14px 18px;
+  width: 100%;
+}
+
+.contacts-touch .nice-select:after {
+  right: 18px;
+  top: 50%;
+}
+
+.contacts-touch .nice-select .current {
+  color: #5f6168;
+}
+
+.contacts-touch .nice-select .list {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 18px 24px 0px rgba(0, 0, 0, 0.16);
+  margin-top: 5px;
+  width: 100%;
+}
+
 .contact-info-item {
   display: flex;
   align-items: center;
