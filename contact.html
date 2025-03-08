@@ -307,247 +307,373 @@
                 </div>
             </div>
 
-    <!-- GetinTouch Section Start -->
-<section class="contacts-touch space-bottom white-bg">
-    <div class="container">
-        <div class="getin-touch-wrap p-0">
-
-            <div class="row g-4 align-items-center justify-content-center">
-                <div class="get-in-touch row g-xxl-4 g-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <!-- Full Name -->
-                    <div class="col-lg-6">
-                        <input type="text" placeholder="Full Name" required>
-                    </div>
-                    
-                    <!-- Email -->
-                    <div class="col-lg-6">
-                        <input type="email" placeholder="Email Address" required>
-                    </div>
-                    
-                    <!-- Age Range -->
-                    <div class="col-lg-6">
-                        <select>
-                            <option value="" disabled selected>Select Age Range</option>
-                            <option value="-17">Below 18</option>
-                            <option value="18-28">18-28</option>
-                            <option value="29-39">29-39</option>
-                            <option value="40-50">40-50</option>
-                            <option value="51+">51 and over</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Nationality - with autocomplete -->
-                    <div class="col-lg-6">
-                        <input type="text" id="nationality" placeholder="Nationality (start typing)" required>
-                        <div id="nationality-suggestions" class="autocomplete-suggestions"></div>
-                    </div>
-                    
-                    <!-- Level of Education -->
-                    <div class="col-lg-6">
-                        <select>
-                            <option value="" disabled selected>Level of Education</option>
-                            <option value="High School">High School Graduate</option>
-                            <option value="Tertiary">Tertiary Student</option>
-                            <option value="Graduate">Graduate Education</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Program Interest -->
-                    <div class="col-lg-6">
-                        <select>
-                            <option value="" disabled selected>Program Interest</option>
-                            <option value="Bachelors">Bachelor's Degree</option>
-                            <option value="Masters">Master's Degree</option>
-                            <option value="Doctorate">Doctorate</option>
-                            <option value="Short Course">Short Courses</option>
-                            <option value="Pre-degree">Pre-degree</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Course/Subject Area -->
-                    <div class="col-lg-12">
-                        <input type="text" placeholder="Course/Subject Area of Interest (e.g., Bachelor of Arts, MBA, etc.)">
-                    </div>
-                    
-                    <!-- Preferred Study Location -->
-                    <div class="col-lg-6">
-                        <select>
-                            <option value="" disabled selected>Preferred Study Location</option>
-                            <option value="UK">United Kingdom</option>
-                            <option value="Europe">Europe</option>
-                            <option value="Africa">Africa</option>
-                            <option value="Canada">Canada</option>
-                            <option value="USA">USA</option>
-                            <option value="Middle East">Middle East</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Preferred Mode of Study -->
-                    <div class="col-lg-6">
-                        <select>
-                            <option value="" disabled selected>Preferred Mode of Study</option>
-                            <option value="In-Person">Study Abroad (In-Person)</option>
-                            <option value="Distance">Distance Learning</option>
-                            <option value="Exchange">Exchange Program</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Program Funding -->
-                    <div class="col-lg-6">
-                        <select>
-                            <option value="" disabled selected>Program Funding</option>
-                            <option value="Self">Self-Funding</option>
-                            <option value="Government">Government Funding</option>
-                            <option value="Loans">Loans</option>
-                            <option value="Bursary">Bursary</option>
-                            <option value="Scholarships">Scholarships</option>
-                            <option value="Grants">Grants</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Start Date -->
-                    <div class="col-lg-6">
-                        <input type="month" placeholder="Preferred Start Date (Month/Year)">
-                    </div>
-                    
-                    <!-- Services Needed -->
-                    <div class="col-lg-12">
-                        <textarea name="services-needed" rows="5" placeholder="Services Needed (Provide as much detail as possible)"></textarea>
-                    </div>
-                    
-                    <!-- Submit Button -->
-                    <div class="col-lg-12 text-center mt-4">
-                        <button type="button"
-                            class="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden p1-bg rounded-2">
-                            Submit
-                        </button>
+        <!-- GetinTouch Section Start -->
+        <section class="contacts-touch space-bottom white-bg">
+            <form name="mainForm" method="post" action="http://127.0.0.1:5000/send_email">   
+                <div class="container">
+                    <div class="getin-touch-wrap p-0">
+                        <div class="row g-4 align-items-center justify-content-center">
+                            <div class="get-in-touch row g-xxl-4 g-3">
+                                <!-- Full Name -->
+                                <div class="col-lg-6">
+                                    <input type="text" placeholder="Full Name" id="full_name" required>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="col-lg-6">
+                                    <input type="email" placeholder="Email Address" id="user_email" required>
+                                </div>
+                                
+                                <!-- Age Range -->
+                                <div class="col-lg-6">
+                                    <select id="age_range">
+                                        <option value="" disabled selected>Select Age Range</option>
+                                        <option value="-17">Below 18</option>
+                                        <option value="18-28">18-28</option>
+                                        <option value="29-39">29-39</option>
+                                        <option value="40-50">40-50</option>
+                                        <option value="51+">51 and over</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Nationality - with autocomplete -->
+                                <div class="col-lg-6">
+                                    <input type="text" id="nationality" placeholder="Nationality (start typing)">
+                                    <div id="nationality-suggestions" class="autocomplete-suggestions"></div>
+                                </div>
+                                
+                                <!-- Level of Education -->
+                                <div class="col-lg-6">
+                                    <select id="level_of_education">
+                                        <option value="" disabled selected>Level of Education</option>
+                                        <option value="High School">High School Graduate</option>
+                                        <option value="Tertiary">Tertiary Student</option>
+                                        <option value="Graduate">Graduate Education</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Program Interest -->
+                                <div class="col-lg-6">
+                                    <select id="program_interest">
+                                        <option value="" disabled selected>Program Interest</option>
+                                        <option value="Bachelors">Bachelor's Degree</option>
+                                        <option value="Masters">Master's Degree</option>
+                                        <option value="Doctorate">Doctorate</option>
+                                        <option value="Short Course">Short Courses</option>
+                                        <option value="Pre-degree">Pre-degree</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Course/Subject Area -->
+                                <div class="col-lg-12">
+                                    <input type="text" id="course_of_interest" placeholder="Course/Subject Area of Interest (e.g., Bachelor of Arts, MBA, etc.)">
+                                </div>
+                                
+                                <!-- Preferred Study Location -->
+                                <div class="col-lg-6">
+                                    <select id="study_location">
+                                        <option value="" disabled selected>Preferred Study Location</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="Europe">Europe</option>
+                                        <option value="Africa">Africa</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="USA">USA</option>
+                                        <option value="Middle East">Middle East</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Preferred Mode of Study -->
+                                <div class="col-lg-6">
+                                    <select id="mode_of_study">
+                                        <option value="" disabled selected>Preferred Mode of Study</option>
+                                        <option value="In-Person">Study Abroad (In-Person)</option>
+                                        <option value="Distance">Distance Learning</option>
+                                        <option value="Exchange">Exchange Program</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Program Funding -->
+                                <div class="col-lg-6">
+                                    <select id="funding">
+                                        <option value="" disabled selected>Program Funding</option>
+                                        <option value="Self">Self-Funding</option>
+                                        <option value="Government">Government Funding</option>
+                                        <option value="Loans">Loans</option>
+                                        <option value="Bursary">Bursary</option>
+                                        <option value="Scholarships">Scholarships</option>
+                                        <option value="Grants">Grants</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Start Date -->
+                                <div class="col-lg-6">
+                                    <input type="month" id="start_date" placeholder="Preferred Start Date (Month/Year)">
+                                </div>
+                                
+                                <!-- Services Needed -->
+                                <div class="col-lg-12">
+                                    <textarea id="message" rows="5" placeholder="Services Needed (Provide as much detail as possible)"></textarea>
+                                </div>
+                                
+                                <!-- Submit Button - Initially Disabled -->
+                                <div class="col-lg-12 text-center mt-4">
+                                    <button type="button" id="submitBtn" disabled class="disabled">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-  // List of all countries
-  const countries = [
-    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", 
-    "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", 
-    "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Côte d'Ivoire", "Cabo Verde", 
-    "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", 
-    "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
-    "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", 
-    "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", 
-    "Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", 
-    "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", 
-    "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", 
-    "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", 
-    "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", 
-    "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", 
-    "Oman", "Pakistan", "Palau", "Palestine State", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", 
-    "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", 
-    "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", 
-    "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", 
-    "Syria", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", 
-    "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", 
-    "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
-  ];
-
-  const nationalityInput = document.getElementById('nationality');
-  const suggestionsList = document.getElementById('nationality-suggestions');
-
-  // Add input event listener to the nationality input
-  nationalityInput.addEventListener('input', function() {
-    const inputValue = this.value.toLowerCase();
-    
-    // Clear previous suggestions
-    suggestionsList.innerHTML = '';
-    
-    // If input is empty, hide suggestions
-    if (inputValue.length === 0) {
-      suggestionsList.style.display = 'none';
-      return;
-    }
-    
-    // Filter countries based on input
-    const filteredCountries = countries.filter(country => 
-      country.toLowerCase().startsWith(inputValue)
-    );
-    
-    // Display suggestions
-    if (filteredCountries.length > 0) {
-      suggestionsList.style.display = 'block';
-      
-      filteredCountries.forEach(country => {
-        const suggestionItem = document.createElement('div');
-        suggestionItem.classList.add('autocomplete-suggestion');
-        suggestionItem.textContent = country;
+            </form>
+        </section>
         
-        // Add click event to suggestions
-        suggestionItem.addEventListener('click', function() {
-          nationalityInput.value = country;
-          suggestionsList.style.display = 'none';
-        });
-        
-        suggestionsList.appendChild(suggestionItem);
-      });
-    } else {
-      suggestionsList.style.display = 'none';
-    }
-  });
-  
-  // Hide suggestions when clicking outside
-  document.addEventListener('click', function(e) {
-    if (e.target !== nationalityInput && e.target !== suggestionsList) {
-      suggestionsList.style.display = 'none';
-    }
-  });
-  
-  // Add key navigation for suggestions
-  nationalityInput.addEventListener('keydown', function(e) {
-    const suggestions = suggestionsList.querySelectorAll('.autocomplete-suggestion');
-    if (suggestions.length === 0) return;
     
-    const activeItem = suggestionsList.querySelector('.selected');
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // List of all countries for nationality autocomplete
+                const countries = [
+                    "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", 
+                    "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", 
+                    "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Côte d'Ivoire", "Cabo Verde", 
+                    "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", 
+                    "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", 
+                    "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", 
+                    "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", 
+                    "Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", 
+                    "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", 
+                    "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", 
+                    "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", 
+                    "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", 
+                    "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", 
+                    "Oman", "Pakistan", "Palau", "Palestine State", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", 
+                    "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", 
+                    "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", 
+                    "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", 
+                    "Syria", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", 
+                    "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States of America", "Uruguay", "Uzbekistan", "Vanuatu", 
+                    "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+                ];
     
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (!activeItem) {
-        suggestions[0].classList.add('selected');
-      } else {
-        activeItem.classList.remove('selected');
-        const nextSibling = activeItem.nextElementSibling;
-        if (nextSibling) {
-          nextSibling.classList.add('selected');
-        } else {
-          suggestions[0].classList.add('selected');
-        }
-      }
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (!activeItem) {
-        suggestions[suggestions.length - 1].classList.add('selected');
-      } else {
-        activeItem.classList.remove('selected');
-        const prevSibling = activeItem.previousElementSibling;
-        if (prevSibling) {
-          prevSibling.classList.add('selected');
-        } else {
-          suggestions[suggestions.length - 1].classList.add('selected');
-        }
-      }
-    } else if (e.key === 'Enter' && activeItem) {
-      e.preventDefault();
-      nationalityInput.value = activeItem.textContent;
-      suggestionsList.style.display = 'none';
-    } else if (e.key === 'Escape') {
-      suggestionsList.style.display = 'none';
-    }
-  });
-});
+                // ===== Nationality Autocomplete Functionality =====
+                const nationalityInput = document.getElementById('nationality');
+                const suggestionsList = document.getElementById('nationality-suggestions');
+    
+                // Add input event listener to the nationality input
+                nationalityInput.addEventListener('input', function() {
+                    const inputValue = this.value.toLowerCase();
+                    
+                    // Clear previous suggestions
+                    suggestionsList.innerHTML = '';
+                    
+                    // If input is empty, hide suggestions
+                    if (inputValue.length === 0) {
+                        suggestionsList.style.display = 'none';
+                        return;
+                    }
+                    
+                    // Filter countries based on input
+                    const filteredCountries = countries.filter(country => 
+                        country.toLowerCase().startsWith(inputValue)
+                    );
+                    
+                    // Display suggestions
+                    if (filteredCountries.length > 0) {
+                        suggestionsList.style.display = 'block';
+                        
+                        filteredCountries.forEach(country => {
+                            const suggestionItem = document.createElement('div');
+                            suggestionItem.classList.add('autocomplete-suggestion');
+                            suggestionItem.textContent = country;
+                            
+                            // Add click event to suggestions
+                            suggestionItem.addEventListener('click', function() {
+                                nationalityInput.value = country;
+                                suggestionsList.style.display = 'none';
+                                // Trigger form validation after selecting a country
+                                validateForm();
+                            });
+                            
+                            suggestionsList.appendChild(suggestionItem);
+                        });
+                    } else {
+                        suggestionsList.style.display = 'none';
+                    }
+                });
+                
+                // Hide suggestions when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (e.target !== nationalityInput && e.target !== suggestionsList) {
+                        suggestionsList.style.display = 'none';
+                    }
+                });
+                
+                // Add key navigation for suggestions
+                nationalityInput.addEventListener('keydown', function(e) {
+                    const suggestions = suggestionsList.querySelectorAll('.autocomplete-suggestion');
+                    if (suggestions.length === 0) return;
+                    
+                    const activeItem = suggestionsList.querySelector('.selected');
+                    
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        if (!activeItem) {
+                            suggestions[0].classList.add('selected');
+                        } else {
+                            activeItem.classList.remove('selected');
+                            const nextSibling = activeItem.nextElementSibling;
+                            if (nextSibling) {
+                                nextSibling.classList.add('selected');
+                            } else {
+                                suggestions[0].classList.add('selected');
+                            }
+                        }
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        if (!activeItem) {
+                            suggestions[suggestions.length - 1].classList.add('selected');
+                        } else {
+                            activeItem.classList.remove('selected');
+                            const prevSibling = activeItem.previousElementSibling;
+                            if (prevSibling) {
+                                prevSibling.classList.add('selected');
+                            } else {
+                                suggestions[suggestions.length - 1].classList.add('selected');
+                            }
+                        }
+                    } else if (e.key === 'Enter' && activeItem) {
+                        e.preventDefault();
+                        nationalityInput.value = activeItem.textContent;
+                        suggestionsList.style.display = 'none';
+                        // Trigger form validation after selecting a country
+                        validateForm();
+                    } else if (e.key === 'Escape') {
+                        suggestionsList.style.display = 'none';
+                    }
+                });
+    
+                // ===== Form Validation and Submission =====
+                
+                // Get references to form elements
+                const form = document.querySelector('form[name="mainForm"]');
+                const submitBtn = document.getElementById('submitBtn');
+                const requiredFields = document.querySelectorAll('[required]');
+                
+                // Add input and change event listeners to all required fields
+                requiredFields.forEach(field => {
+                    field.addEventListener('input', validateForm);
+                    field.addEventListener('change', validateForm);
+                    
+                    // Add visual indicator for required fields
+                    field.addEventListener('blur', function() {
+                        if (!this.value.trim()) {
+                            this.classList.add('error');
+                        } else {
+                            this.classList.remove('error');
+                        }
+                    });
+                });
+                
+                // Function to validate the form
+                function validateForm() {
+                    let isValid = true;
+                    
+                    // Check each required field
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.classList.add('error');
+                        } else {
+                            field.classList.remove('error');
+                        }
+                    });
+                    
+                    // Enable or disable submit button based on validation result
+                    if (isValid) {
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('disabled');
+                    } else {
+                        submitBtn.disabled = true;
+                        submitBtn.classList.add('disabled');
+                    }
+                    
+                    return isValid;
+                }
+                
+                // Add submit event listener
+                submitBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Double-check form validity
+                    if (!validateForm()) {
+                        alert('Please fill in all required fields');
+                        return;
+                    }
+                    
+                    // Collect form data with exact keys as specified
+                    const formData = {
+                        "full_name": String(document.getElementById('full_name').value),
+                        "user_email": String(document.getElementById('user_email').value),
+                        "age_range": String(document.getElementById('age_range').value || "N/A"),
+                        "nationality": String(document.getElementById('nationality').value || "N/A"),
+                        "level_of_education": String(document.getElementById('level_of_education').value || "N/A"),
+                        "program_interest": String(document.getElementById('program_interest').value || "N/A"),
+                        "course_of_interest": String(document.getElementById('course_of_interest').value || "N/A"),
+                        "study_location": String(document.getElementById('study_location').value || "N/A"),
+                        "mode_of_study": String(document.getElementById('mode_of_study').value || "N/A"),
+                        "funding": String(document.getElementById('funding').value || "N/A"),
+                        "start_date": String(document.getElementById('start_date').value || "N/A"),
+                        "message": String(document.getElementById('message').value || "N/A")
+                    };
+                    
+                    // Show what's being sent in console for debugging
+                    console.log('Form data being sent:', formData);
+                    
+                    // Disable button and show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
+                    
+                    // Send data to endpoint using XMLHttpRequest
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'http://127.0.0.1:5000/send_email', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    
+                    // Handle response
+                    xhr.onload = function() {
+                        console.log('Response status:', xhr.status);
+                        console.log('Response text:', xhr.responseText);
+                        
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit';
+                        
+                        if (xhr.status === 200) {
+                            // Success - show message and reset form
+                            alert('Form submitted successfully!');
+                            form.reset();
+                            validateForm(); // Re-validate to disable button
+                        } else {
+                            // Error - show status code
+                            alert('Error submitting form. Status: ' + xhr.status);
+                        }
+                    };
+                    
+                    // Handle network errors
+                    xhr.onerror = function() {
+                        console.error('Network error occurred');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit';
+                        alert('A network error occurred. Please check your connection and try again.');
+                    };
+                    
+                    // Send the JSON data
+                    xhr.send(JSON.stringify(formData));
+                });
+                
+                // Run initial validation
+                validateForm();
+            });
         </script>
-
   
     <!--<< All JS Plugins >>-->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
