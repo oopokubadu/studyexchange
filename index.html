@@ -1131,7 +1131,7 @@
                                 </h2>
                                 <p class="pra mb-xxl-4 mb-3 visible-from-bottom">Nemo enim ipsam voluptatem quia
                                     voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores</p>
-                                <h4 class="black fw-bold mb-1">We’r always happy to help.</h4>
+                                <h4 class="black fw-bold mb-1">We’re always happy to help.</h4>
                                 <a href="#" class="black fw-semibold fs-six">dorothy@studyandexchangeconsult.com</a>
                             </div>
                         </div>
@@ -1139,19 +1139,16 @@
                     <div class="col-lg-6 get-in-touch wow fadeInUp" data-wow-delay="0.4s">
                         <div class="row g-xxl-4 g-3">
                             <div class="col-lg-12">
-                                <input type="text" placeholder="Your Name">
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="email" placeholder="Your Email">
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Number">
+                                <input type="text" id="full_name" name="full_name" placeholder="Your Name">
                             </div>
                             <div class="col-lg-12">
-                                <textarea name="get-intouch" rows="5" placeholder="Your Message"></textarea>
+                                <input id="user_email" name="user_email" type="email" placeholder="Your Email">
                             </div>
                             <div class="col-lg-12">
-                                <button type="button"
+                                <textarea name="message" id="message" rows="5" placeholder="Your Message"></textarea>
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="button" id="send_message_btn"
                                     class="common-btn w-100 box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden p1-bg rounded-2">
                                     Send Message
                                 </button>
@@ -1307,21 +1304,53 @@
         </div>
     </footer>
 
-    <!-- Search  -->
-    <div class="search-wrap">
-        <div class="search-inner">
-            <i class="fas fa-times search-close" id="search-close"></i>
-            <div class="search-cell">
-                <form method="get">
-                    <div class="search-field-holder">
-                        <input type="search" class="main-search-input" placeholder="Search...">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Search  -->
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("send_message_btn").addEventListener("click", function () {
+                const fullName = document.getElementById("full_name").value;
+                const userEmail = document.getElementById("user_email").value;
+                const message = document.getElementById("message").value;
+    
+                const formData = {
+                    full_name: fullName,
+                    user_email: userEmail,
+                    age_range: "N/A",  // You need an input field for this
+                    nationality: "N/A", // You need an input field for this
+                    level_of_education: "N/A", // You need an input field for this
+                    program_interest: "N/A", // You need an input field for this
+                    course_of_interest: "N/A", // You need an input field for this
+                    study_location: "N/A", // You need an input field for this
+                    mode_of_study: "N/A", // You need an input field for this
+                    funding: "N/A", // You need an input field for this
+                    start_date: "N/A", // You need an input field for this
+                    message: message
+                };
+    
+                fetch("https://studyexchangebackend.vercel.app/send_email", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Message Sent Successfully!");
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Failed to send message. Please try again.");
+                });
+            });
+        });
+    </script>
+    
+    <button id="send_message_btn"
+        class="common-btn w-100 box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden p1-bg rounded-2">
+        Send Message
+    </button>
+    
     <!--<< All JS Plugins >>-->
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <!--<< Viewport Js >>-->
