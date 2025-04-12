@@ -2240,14 +2240,14 @@ footer {
   width: 36px;
 }
 .header-main .header-logo {
-  max-width: 140px;
+  max-width: 200px;
 }
 .header-main .header-logo img {
   width: 100%;
 }
 @media (max-width: 1399px) {
   .header-main .header-logo {
-    max-width: 100px;
+    max-width: 180px;
   }
   .header-main .header-logo img {
     width: 100%;
@@ -2336,7 +2336,7 @@ footer {
   display: none;
 }
 .offcanvas__info .offcanvas__logo {
-  max-width: 110px;
+  max-width: 200px;
   display: block;
 }
 .offcanvas__info .offcanvas__logo img {
